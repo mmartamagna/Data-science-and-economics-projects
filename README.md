@@ -7,14 +7,14 @@ It provides some statistical insights regarding the [OECD Regional Well-being pr
 
 ## Project outline
 
-- [Data](#data)
-- [Descriptive statistics](#descriptive-statistics)
-- [Analysis of variance (MANOVA, univariate one-way ANOVA)](#analysis-of-variance-(MANOVA,-univariate-one-way-ANOVA))
-- [Principal components analysis (PCA)](#principal-components-analysis-(PCA))
-- [Multidimensional scaling (Classical MDS, Non-metric MDS, Distance-based redundancy analysis)](#multidimensional-scaling-(Classical-MDS,-Non-metric-MDS,-Distance-based-redundancy-analysis))
-- [K-means clustering](#k-means-clustering)
+1. [Data](#data)
+2. [Descriptive statistics](#descriptive-statistics)
+3. [Analysis of variance (MANOVA, univariate one-way ANOVA)](#analysis-of-variance-(MANOVA,-univariate-one-way-ANOVA))
+4. [Principal components analysis (PCA)](#principal-components-analysis-(PCA))
+5. [Multidimensional scaling (Classical MDS, Non-metric MDS, Distance-based redundancy analysis)](#multidimensional-scaling-(Classical-MDS,-Non-metric-MDS,-Distance-based-redundancy-analysis))
+6. [K-means clustering](#k-means-clustering)
 
-### Data
+### 1. Data
 
 The OECD Regional well-being dataset ((https://stats.oecd.org/Index.aspx?DataSetCode=RWB) presents eleven dimensions central to well-being recorded at the regional level, covering _**material conditions**_ (income, jobs and housing), _**quality of life**_ (education, health, environment, safety and access to services) and _**subjective well-being**_ (social network support and life satisfaction). The set of indicators selected to measure these dimensions is a combination of people's attributes and their local conditions, and in most cases, are available over two different years (2000 and 2014). To the aim of this project, a subset of the original OECD data was prepared. The new dataset (dataEU) is composed of **221 regional-level observations** and **15 variables**. The data points regard only a sample of OECD countries belonging to the European continent. The only new added variable is the one named "continent". 
 
@@ -38,7 +38,7 @@ The OECD Regional well-being dataset ((https://stats.oecd.org/Index.aspx?DataSet
 | _self evaluation of life satisfaction (Index)_ | Average score from 0 to 10 of people that replied to the following question: On which step of the ladder would you say you personally feel you stand at this time. (Source: OECD) | SUBJECTIVE WELL-BEING |
 
 
-### Descriptive statistics
+### 2. Descriptive statistics
 
 ```ruby
 ##Plot with all the variables means:
