@@ -52,4 +52,5 @@ ggplot(meandata.melt, aes(y=value,  x= Group.1, color= Group.1, fill= Group.1)) 
   labs(title = "Average value of well-being variables in different continents", 
        y = "Average value") 
  ```
+ ![plot_zoom](https://user-images.githubusercontent.com/87983033/218788502-4b8297c6-cbdc-407c-8c5b-f94d8252ea97.jpg)
 
