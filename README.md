@@ -10,7 +10,7 @@ It provides some statistical insights regarding the [OECD Regional Well-being pr
 1. [Data](#data)
 2. [Descriptive statistics](#descriptive-statistics)
 3. [Multivariate analysis of variance (MANOVA, univariate one-way ANOVA)](#analysis-of-variance-(MANOVA,-univariate-one-way-ANOVA))
-4. [Principal components analysis (PCA)](#principal-components-analysis-(PCA))
+4. [Principal components analysis (PCA)](#principal-components-analysis-(PCA)
 5. [Multidimensional scaling (Classical MDS, Non-metric MDS, Distance-based redundancy analysis)](#multidimensional-scaling-(Classical-MDS,-Non-metric-MDS,-Distance-based-redundancy-analysis))
 6. [K-means clustering](#k-means-clustering)
 
@@ -68,3 +68,16 @@ Multivariate analysis of variance (MANOVA) is a statistical analysis used to exa
 3) QUALITY OF LIFE: Life, Mortality, Homicide, Education, Pollution, Vote, Broadband.
 
 #### Check of the assumptions
+Before conducting a multviariate analysis of variance, it is compulsory the check of a bench of assumptions. 
+
+
+| Assumption | Checking method |  Presence/Absence |
+|------------|-----------------|-------------------|
+|Adequate sample size | 208 observations > n variables | &check;|
+| Independence of the observations |        |  &check;|
+|Absence of univariate or multivariate outliers|     |&cross;|
+|Multivariate normality| Shapiro-Wilk test for multivariate normality| &cross;|
+| Absence of multicollinearity | Correlation should not be above r = 0.90 | &check;|
+| Linearity between all outcome variables for each group |    | &cross; |
+| Homogeneity of variances | Levene’s test can be used to test the equality of variances between groups | &cross;|
+| Homogeneity of variance-covariance matrices | Box’s M Test can be used to check the equality of covariance between the groups| &cross; |
