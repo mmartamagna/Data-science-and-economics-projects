@@ -195,9 +195,17 @@ mosthighlycorrelated(subdata, 15)
 ```
 <img width="450" alt="correl" src="https://user-images.githubusercontent.com/87983033/219010145-74ee2211-d0a5-41c9-a4dd-096036283283.png"> <img width="283" alt="corr 2" src="https://user-images.githubusercontent.com/87983033/219010306-98748d4d-dbd3-4b2a-b4ec-65ecfce4a91b.png">
 
-
-
-
 6. **Linearity between all outcome variables for each group**
-7. **Homogeneity of variances** (Levene’s test can be used to test the equality of variances between groups)
-8. **Homogeneity of variance-covariance matrices** (Box’s M Test can be used to check the equality of covariance between the groups). 
+
+_**Linearity of subjective well-being**_
+<img width="500" alt="subj wellbeing" src="https://user-images.githubusercontent.com/87983033/219011443-0725f252-d588-447f-83b7-278b456cc29d.png">
+
+_**Linearity of material conditions**_
+<img width="500" alt="linearity subj wellbeing" src="https://user-images.githubusercontent.com/87983033/219011276-ca33ecf2-c85f-4e87-b340-7743afc9cb76.png">
+
+_**Linearity of quality of life**_
+<img width="500" alt="quality" src="https://user-images.githubusercontent.com/87983033/219011655-da9ce36a-5c67-42d9-9c31-cb49e564db8a.png">
+
+
+8. **Homogeneity of variances** (Levene’s test can be used to test the equality of variances between groups)
+9. **Homogeneity of variance-covariance matrices** (Box’s M Test can be used to check the equality of covariance between the groups). 
