@@ -147,3 +147,5 @@ anovadata3 %>%
   select(education, homicide, mortality, life, pollution, vote, broadband) %>%
   mshapiro_test()
 ```
+<img width="550" alt="ex norm" src="https://user-images.githubusercontent.com/87983033/219007441-f2725217-304e-4803-a96d-ad6ff898923b.png">
+
