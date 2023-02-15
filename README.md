@@ -156,10 +156,48 @@ library(sm)
 comp<- sm.density.compare(dataEU$income, dataEU$continent)
 legend("right", comp$levels, col=comp$col, lty = comp$lty, lwd = comp$lwd)
 
-#Q-plot
+#Q-Q plot
 qqnorm(dataEU$income, pch = 1, frame = FALSE)
 qqline(dataEU$income, col = "steelblue", lwd = 2)
 ```
 <img width="550" alt="ex norm" src="https://user-images.githubusercontent.com/87983033/219007441-f2725217-304e-4803-a96d-ad6ff898923b.png"> <img width="364" alt="qqplot" src="https://user-images.githubusercontent.com/87983033/219008379-e2c09fb1-3db3-4b28-9181-d0edd9348092.png">
  
+5. **Absence of multicollinearity** (Correlation should not be above r = 0.90).
 
+```ruby
+###CORRELATION PLOT:
+subdata <- dataEU[c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17)] #subgroup with variables of interest
+
+# correlation plot
+library(corrplot)
+M = cor(subdata)
+corrplot(M, method = 'number') # colorful number
+
+#top 15 highest correlations
+library(lares)
+mosthighlycorrelated <- function(mydataframe,numtoreport)
+{
+  # find the correlations
+  cormatrix <- cor(mydataframe)
+  # set the correlations on the diagonal or lower triangle to zero,
+  # so they will not be reported as the highest ones:
+  diag(cormatrix) <- 0
+  cormatrix[lower.tri(cormatrix)] <- 0
+  # flatten the matrix into a dataframe for easy sorting
+  fm <- as.data.frame(as.table(cormatrix))
+  # assign human-friendly names
+  names(fm) <- c("First.Variable", "Second.Variable","Correlation")
+  # sort and print the top n correlations
+  head(fm[order(abs(fm$Correlation),decreasing=T),],n=numtoreport)
+}
+
+mosthighlycorrelated(subdata, 15)
+```
+<img width="450" alt="correl" src="https://user-images.githubusercontent.com/87983033/219010145-74ee2211-d0a5-41c9-a4dd-096036283283.png"> <img width="283" alt="corr 2" src="https://user-images.githubusercontent.com/87983033/219010306-98748d4d-dbd3-4b2a-b4ec-65ecfce4a91b.png">
+
+
+
+
+6. **Linearity between all outcome variables for each group**
+7. **Homogeneity of variances** (Levene’s test can be used to test the equality of variances between groups)
+8. **Homogeneity of variance-covariance matrices** (Box’s M Test can be used to check the equality of covariance between the groups). 
