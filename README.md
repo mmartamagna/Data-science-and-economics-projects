@@ -383,4 +383,66 @@ R FUNCTIONS:
 - `isoMDS()` is the function used for the Non Metric Multidimensional Scaling.
 - `capscale()` is the function used for the Distance-based Redundancy Analysis.
 
+```ruby
+#CLASSICAL MULTIDIMENSIONAL SCALING
+  # Classical MDS
+  # N rows (objects) x p columns (variables)
+  # each row identified by a unique row name
+
+library(tibble)
+remove_rownames(dataEU) %>% has_rownames()
+dataEU2 <- data.frame(column_to_rownames(dataEU, var = "region"))
+standardisedvariables<- as.data.frame(scale(dataEU2[4:16]))
+  
+d <- dist(standardisedvariables) # euclidean distances between the rows
+fit <- cmdscale(d,eig=TRUE, k=2) # k is the number of dim
+fit 
+summary(fit)
+
+# plot solution
+x <- fit$points[,1]
+y <- fit$points[,2]
+plot(x, y, xlab="Coordinate 1", ylab="Coordinate 2",
+     main="Metric MDS", type="n")
+text(x, y, labels = row.names(standardisedvariables), cex=.7)
+biplot(fit)
+```
+
+```ruby
+##Distance-based redundancy analysis (dbRDA)
+##library(tibble)
+remove_rownames(dataEU) %>% has_rownames()
+dataEU2 <- data.frame(column_to_rownames(dataEU, var = "region"))
+standardisedvariables<- as.data.frame(scale(dataEU2[4:16]))
+
+mod <- capscale(standardisedvariables ~ 1)
+summary(mod)
+plot(mod)
+
+capscale(standardisedvariables, distance = "euclidean", sqrt.dist = FALSE, comm = NULL, add = FALSE,  dfun = vegdist, metaMDSdist = FALSE, na.action = na.fail, subset = NULL)
+mod2 <- prcomp(standardisedvariables)
+biplot(mod2)
+```
+
+```ruby
+## non-metric multidimensional scaling
+# Nonmetric MDS
+# N rows (objects) x p columns (variables)
+# each row identified by a unique row name
+
+library(MASS)
+d <- dist(standardisedvariables) # euclidean distances between the rows
+fit <- isoMDS(d, k=2) # k is the number of dim
+fit # view results
+
+# plot solution
+x <- fit$points[,1]
+y <- fit$points[,2]
+plot(x, y, xlab="Coordinate 1", ylab="Coordinate 2",
+     main="Nonmetric MDS", type="n")
+text(x, y, labels = row.names(standardisedvariables), cex=.7)
+```
+
+
+
 ### 6. K-means clustering
