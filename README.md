@@ -290,8 +290,8 @@ grouped.data3 %>% welch_anova_test(value ~ continent)
 ```
 
 ONE-WAY ANOVA RESULTS:
--- GROUP 1 (Subjective well-being): the test is statistically significant, which means we can reject the null hypothesis that social and satisfaction are equal between the seven European groups.
--- GROUP 2 (Material conditions):  the test is statistically significant, which means we can reject the null hypothesis that income, employment, unemployment, rooms, are equal between the seven European groups.
--- GROUP 3 (Quality of Life): the test is statistically significant, which means we can reject the null hypothesis that life, mortality, homicide, pollution, vote, education, and broadband, are equal between the seven European groups.
+- GROUP 1 (Subjective well-being): the test is statistically significant, which means we can reject the null hypothesis that social and satisfaction are equal between the seven European groups.
+- GROUP 2 (Material conditions):  the test is statistically significant, which means we can reject the null hypothesis that income, employment, unemployment, rooms, are equal between the seven European groups.
+- GROUP 3 (Quality of Life): the test is statistically significant, which means we can reject the null hypothesis that life, mortality, homicide, pollution, vote, education, and broadband, are equal between the seven European groups.
 
 
