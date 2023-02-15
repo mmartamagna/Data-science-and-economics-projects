@@ -45,7 +45,6 @@ sumtable(variables)
 ```
 <img width="544" alt="summary statistics" src="https://user-images.githubusercontent.com/87983033/218986756-763f808f-8a37-48c3-aa0f-4d5ea34b1035.png">
 
-
 ```ruby
 ##Plot with all the variables means:
 library("reshape2")
@@ -84,11 +83,23 @@ Before conducting a multviariate analysis of variance, it is compulsory the chec
 1. **Adequate sample size**. The dataset presents an adequate number of observations with respect to the number of variables (220 rows > 14 columns).
 2. **Independence of observations**. Each record belongs to only one group (region), therefore there are no relationships between the observations in each group.
 3. **Absence of univariate or multivariate outliers**. Multivariate outliers are data points that have an unusual combination of values on the outcome (or dependent) variables. In the MANOVA framework, the _Mahalanobis distance_ is generally used to detect multivariate outliers. The distance reports how far an observation is from the center of the data cloud, taking into account the shape (covariance) of the cloud as well. 
-In the table below are reported the number of outliers for each variable and whether these are extreme or not. On the right, an example of box plot reporting the outliers for the "Homicide rate" and "Mortality rate" variables.
+In the table it is possible to see whether each variable presents one or more outliers and if these are extreme or not.
 
 <img width="450" alt="outliers" src="https://user-images.githubusercontent.com/87983033/218998752-b62aeb81-c3c2-40b1-b3bc-387555e19ecb.png"> 
 
-<img width="450" alt="esempio outliers" src="https://user-images.githubusercontent.com/87983033/219000271-4d8ecff3-a416-4322-9958-e5e0a57f973c.png"> <img width="450" alt="altro esempio" src="https://user-images.githubusercontent.com/87983033/219001322-c85705c0-0ec9-41ae-a60a-401e841a07f4.png">
+```ruby
+## Example of boxplot with outliers
+##Boxplots with outliers for Homicide rate
+is_outlier <- function(x) {
+  return(x < quantile(x, 0.25) - 1.5 * IQR(x) | x > quantile(x, 0.75) + 1.5 * IQR(x))
+}
+rownames(dataEU)<- dataEU$region #convert column region to row names
+dat <- dataEU %>% tibble::rownames_to_column(var="outlier") %>% group_by(continent) %>% mutate(is_outlier=ifelse(is_outlier(homicide), homicide, as.numeric(NA)))
+dat$outlier[which(is.na(dat$is_outlier))] <- as.numeric(NA)
+p9<- ggplot(dat, aes(x = factor(continent), y = homicide, fill = continent)) + geom_text(aes(label=outlier),na.rm=TRUE, nudge_y=0.04, size=3, vjust=-0.5, color="Black") + geom_boxplot(outlier.colour="black", outlier.shape=16, outlier.size=2) + xlab("Continent") + ylab("Homicide rate") + scale_fill_brewer(palette="Pastel1") + labs(fill="Continent") + theme_minimal()
+p9
+```
+<img width="450" alt="esempio outliers" src="https://user-images.githubusercontent.com/87983033/219000271-4d8ecff3-a416-4322-9958-e5e0a57f973c.png">
 
 
 4.  
