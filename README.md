@@ -101,7 +101,8 @@ p9
 ```
 <img width="500" alt="esempio outliers" src="https://user-images.githubusercontent.com/87983033/219000271-4d8ecff3-a416-4322-9958-e5e0a57f973c.png">
 
-4. **Multivariate normality**
+4. **Univariate and multivariate normality**
+The Shapiro–Wilk test is a test of normality. For checking the univariate normality, the `shapiro_test()` function is implemented. For checking the multivariate normality, the `mshapiro_test()` function is used. In both cases we verify that, when paragoning the continents, there is no univariate and multivariate normality.
 
 ```ruby
 #4) #CHECK FOR UNIVARIATE NORMALITY: in none of the group I have univariate normality.
