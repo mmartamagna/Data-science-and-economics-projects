@@ -265,6 +265,9 @@ Manova(model3, test.statistic = "Pillai")
 ```
 <img width="550" alt="anova" src="https://user-images.githubusercontent.com/87983033/219016440-f6572962-fab7-4c4b-abd5-1405ea768cc2.png">
 
+MAIN RESULTS OF MANOVA:
+The multivariate analysis of variance (MANOVA) confirms that the mean of each subgroup of regions significantly differs from the others when considering two or more dependent variables. However, the greatest part of the assumptions is not respected. Some possible solutions could be: to transform the single variables into normal through some functions (normality assumption); or removing those variables that cause non-linearity (linearity assumption), or try to transform the dependent variable to correct for the unequal variances (homogeneity of variance assumption) or simply accepting a lower level of statistical significance (alpha level) for the MANOVA result.
+
 ### 3.3 Univariate one-way ANOVA computation
 A univariate one-way ANOVA is conducted to examine the specific dependent variables that contributed to the significant global effect. The command is the `welch_anova_test()`, which is suitable when the homogeneity of variance assumption is not met.
 
@@ -290,8 +293,8 @@ grouped.data3 %>% welch_anova_test(value ~ continent)
 ```
 
 ONE-WAY ANOVA RESULTS:
+The univariate one-way ANOVA examines, separately, each dependent variable. The goal is to identify the specific dependent variables that contributed to the significant global effect. It confirms that, taking single variables, in each of them we have significant differences in the mean of the subgroups. 
 - GROUP 1 (Subjective well-being): the test is statistically significant, which means we can reject the null hypothesis that social and satisfaction are equal between the seven European groups.
 - GROUP 2 (Material conditions):  the test is statistically significant, which means we can reject the null hypothesis that income, employment, unemployment, rooms, are equal between the seven European groups.
 - GROUP 3 (Quality of Life): the test is statistically significant, which means we can reject the null hypothesis that life, mortality, homicide, pollution, vote, education, and broadband, are equal between the seven European groups.
-
 
