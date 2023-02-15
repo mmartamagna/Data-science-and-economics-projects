@@ -345,6 +345,41 @@ fviz_eig(var.pca) #first method to choose the number of ocmponents: the elbow, w
 ```
 
 **Graphical representation of PCA**
-*** Regional level biplots
 
-<img width="820" alt="pca1" src="https://user-images.githubusercontent.com/87983033/219051085-bb2a2b42-d6a9-4ff1-ab3b-9ee6722a2f66.png">
+***Regional level biplots***
+The biplots show the observations as points in the plane formed by two principal components (synthetic variables). The difference in colours depends on the contribution given by each region to the definition of the components.
+
+```ruby
+library(pca3d)
+pca2d(var.pca, components=1:3, biplot=TRUE, biplot.vars=3)
+```
+<img width="800" alt="pca1" src="https://user-images.githubusercontent.com/87983033/219051085-bb2a2b42-d6a9-4ff1-ab3b-9ee6722a2f66.png">
+
+```ruby
+p <- fviz_pca_ind(var.pca, label="none", habillage=dataEU2$continent,
+                  addEllipses=TRUE, ellipse.level=0.95)
+print(p)
+```
+<img width="800" alt="pca 2" src="https://user-images.githubusercontent.com/87983033/219056081-b17fa788-4c9c-4aa6-ba75-f210987f391a.png">
+
+```ruby
+#Graphical representation of PCA
+fviz_pca_ind(var.pca,
+             col.ind = "contrib", # Color by the quality of representation
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE    # Avoid text overlapping
+             )
+
+fviz_pca_var(var.pca,
+             col.var = "contrib", # Color by contributions to the PC
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE     # Avoid text overlapping
+)
+
+fviz_pca_biplot(var.pca, repel = TRUE,
+                col.var = "#2E9FDF", # Variables color
+                col.ind = "#696969"  # Individuals color
+)
+```
+
+<img width="800" alt="pca 3" src="https://user-images.githubusercontent.com/87983033/219056407-490b2aa2-8d4d-4efe-8d5c-84ecdaafc918.png">
