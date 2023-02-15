@@ -383,6 +383,8 @@ R FUNCTIONS:
 - `isoMDS()` is the function used for the Non Metric Multidimensional Scaling.
 - `capscale()` is the function used for the Distance-based Redundancy Analysis.
 
+### Classical multidimensional scaling ### 
+From the graph it seems that there are three main groups in which observations are divided.
 ```ruby
 #CLASSICAL MULTIDIMENSIONAL SCALING
   # Classical MDS
@@ -407,7 +409,10 @@ plot(x, y, xlab="Coordinate 1", ylab="Coordinate 2",
 text(x, y, labels = row.names(standardisedvariables), cex=.7)
 biplot(fit)
 ```
+<img width="760" alt="grafico 1" src="https://user-images.githubusercontent.com/87983033/219060870-acc2707d-3d40-4f67-a3be-5901481d735b.png">
 
+### Kruskal's Non-metric Multidimensional Scaling ### 
+From the graph it seems that there are three main groups in which observations are divided.
 ```ruby
 ##Distance-based redundancy analysis (dbRDA)
 ##library(tibble)
@@ -423,7 +428,10 @@ capscale(standardisedvariables, distance = "euclidean", sqrt.dist = FALSE, comm 
 mod2 <- prcomp(standardisedvariables)
 biplot(mod2)
 ```
+<img width="760" alt="Non metric MDS" src="https://user-images.githubusercontent.com/87983033/219061456-e181e325-b747-48ae-b665-98b75a7cf475.png">
 
+### Distance-based Redundancy Analysis ###
+Distance-based redundancy analysis (db-RDA) is a method for carrying out constrained ordinations on data using non-Euclidean distance measures. From the graph it seems that there are three main groups in which observations are divided.
 ```ruby
 ## non-metric multidimensional scaling
 # Nonmetric MDS
@@ -442,7 +450,7 @@ plot(x, y, xlab="Coordinate 1", ylab="Coordinate 2",
      main="Nonmetric MDS", type="n")
 text(x, y, labels = row.names(standardisedvariables), cex=.7)
 ```
-
+<img width="349" alt="grafici vari" src="https://user-images.githubusercontent.com/87983033/219061795-effbb77f-f7ff-483f-aa83-5617db906a67.png">
 
 
 ### 6. K-means clustering
