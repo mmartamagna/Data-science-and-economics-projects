@@ -356,6 +356,7 @@ pca2d(var.pca, components=1:3, biplot=TRUE, biplot.vars=3)
 <img width="800" alt="pca1" src="https://user-images.githubusercontent.com/87983033/219051085-bb2a2b42-d6a9-4ff1-ab3b-9ee6722a2f66.png">
 
 ```ruby
+#bi-plot with continents subgroups
 p <- fviz_pca_ind(var.pca, label="none", habillage=dataEU2$continent,
                   addEllipses=TRUE, ellipse.level=0.95)
 print(p)
@@ -363,7 +364,7 @@ print(p)
 <img width="800" alt="pca 2" src="https://user-images.githubusercontent.com/87983033/219056081-b17fa788-4c9c-4aa6-ba75-f210987f391a.png">
 
 ```ruby
-#Graphical representation of PCA
+#bi-plot with vectors
 fviz_pca_ind(var.pca,
              col.ind = "contrib", # Color by the quality of representation
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
