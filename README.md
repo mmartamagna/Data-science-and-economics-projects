@@ -9,7 +9,7 @@ It provides some statistical insights regarding the [OECD Regional Well-being pr
 
 1. [Data](#data)
 2. [Descriptive statistics](#descriptive-statistics)
-3. [Analysis of variance (MANOVA, univariate one-way ANOVA)](#analysis-of-variance-(MANOVA,-univariate-one-way-ANOVA))
+3. [Multivariate analysis of variance (MANOVA, univariate one-way ANOVA)](#analysis-of-variance-(MANOVA,-univariate-one-way-ANOVA))
 4. [Principal components analysis (PCA)](#principal-components-analysis-(PCA))
 5. [Multidimensional scaling (Classical MDS, Non-metric MDS, Distance-based redundancy analysis)](#multidimensional-scaling-(Classical-MDS,-Non-metric-MDS,-Distance-based-redundancy-analysis))
 6. [K-means clustering](#k-means-clustering)
@@ -39,6 +39,12 @@ The OECD Regional well-being dataset ((https://stats.oecd.org/Index.aspx?DataSet
 
 
 ### 2. Descriptive statistics
+```ruby
+variables=data.frame(income, employment, unemployment, rooms, education, life, mortality, pollution, homicide, vote, broadband, social, satisfaction)
+sumtable(variables)
+```
+<img width="544" alt="summary statistics" src="https://user-images.githubusercontent.com/87983033/218986756-763f808f-8a37-48c3-aa0f-4d5ea34b1035.png">
+
 
 ```ruby
 ##Plot with all the variables means:
@@ -54,3 +60,5 @@ ggplot(meandata.melt, aes(y=value,  x= Group.1, color= Group.1, fill= Group.1)) 
  ```
  ![plot_zoom](https://user-images.githubusercontent.com/87983033/218788502-4b8297c6-cbdc-407c-8c5b-f94d8252ea97.jpg)
 
+
+### 3. Multivariate analysis of variance (MANOVA, univariate one-way ANOVA)
