@@ -196,7 +196,14 @@ mosthighlycorrelated(subdata, 15)
 <img width="450" alt="correl" src="https://user-images.githubusercontent.com/87983033/219010145-74ee2211-d0a5-41c9-a4dd-096036283283.png"> <img width="283" alt="corr 2" src="https://user-images.githubusercontent.com/87983033/219010306-98748d4d-dbd3-4b2a-b4ec-65ecfce4a91b.png">
 
 6. **Linearity between all outcome variables for each group**
+There is no linearity across outcome variables.
 
+```ruby
+library(car)
+scatterplotMatrix(~ social + satisfaction, data =anovadata)
+scatterplotMatrix(~ income + employment + unemployment + rooms, data =anovadata)
+scatterplotMatrix(~ life + mortality + homicide + vote + education + broadband + pollution, data =anovadata)
+```
 _**Linearity of variables regarding Subjective Well-being**_
 
 <img width="500" alt="subj wellbeing" src="https://user-images.githubusercontent.com/87983033/219011443-0725f252-d588-447f-83b7-278b456cc29d.png">
