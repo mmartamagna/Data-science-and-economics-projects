@@ -203,11 +203,11 @@ _**Linearity of subjective well-being**_
 
 _**Linearity of material conditions**_
 
-<img width="500" alt="linearity subj wellbeing" src="https://user-images.githubusercontent.com/87983033/219011276-ca33ecf2-c85f-4e87-b340-7743afc9cb76.png">
+<img width="450" alt="linearity subj wellbeing" src="https://user-images.githubusercontent.com/87983033/219011276-ca33ecf2-c85f-4e87-b340-7743afc9cb76.png">
 
 _**Linearity of quality of life**_
 
-<img width="500" alt="quality" src="https://user-images.githubusercontent.com/87983033/219011655-da9ce36a-5c67-42d9-9c31-cb49e564db8a.png">
+<img width="600" alt="quality" src="https://user-images.githubusercontent.com/87983033/219011655-da9ce36a-5c67-42d9-9c31-cb49e564db8a.png">
 
 
 8. **Homogeneity of variances** (Levene’s test can be used to test the equality of variances between groups)
