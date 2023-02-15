@@ -152,10 +152,14 @@ Below the density plot of the Income variable.
 
 ```ruby
 ##DENSITY PLOTS:
-install.packages("sm")
 library(sm)
 comp<- sm.density.compare(dataEU$income, dataEU$continent)
 legend("right", comp$levels, col=comp$col, lty = comp$lty, lwd = comp$lwd)
+
+#Q-plot
+qqnorm(dataEU$income, pch = 1, frame = FALSE)
+qqline(dataEU$income, col = "steelblue", lwd = 2)
 ```
-<img width="550" alt="ex norm" src="https://user-images.githubusercontent.com/87983033/219007441-f2725217-304e-4803-a96d-ad6ff898923b.png">
+<img width="550" alt="ex norm" src="https://user-images.githubusercontent.com/87983033/219007441-f2725217-304e-4803-a96d-ad6ff898923b.png"> <img width="364" alt="qqplot" src="https://user-images.githubusercontent.com/87983033/219008379-e2c09fb1-3db3-4b28-9181-d0edd9348092.png">
+ 
 
