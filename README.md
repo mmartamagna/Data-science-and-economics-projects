@@ -59,7 +59,7 @@ ggplot(meandata.melt, aes(y=value,  x= Group.1, color= Group.1, fill= Group.1)) 
  ```
 ![plot_zoom](https://user-images.githubusercontent.com/87983033/218999087-99f76460-0e8d-4b9a-a0d5-72f8c1819713.png)
 
-### 3. Multivariate analysis of variance (MANOVA, univariate one-way ANOVA)
+### 3. Multivariate analysis of variance (assumptions, MANOVA, univariate one-way ANOVA)
 Multivariate analysis of variance (MANOVA) is a statistical analysis used to examine the effects of one or more independent variables (IVs) on multiple dependent variables (DVs). Unlike ANOVA procedures that analyze differences across two or more groups on one dependent variable, MANOVA procedures analyze differences across two or more groups on two or more dependent variables. In this part three different MANOVA procedures are used. In each case, a different group of independent variables is considered:
 1) SUBJECTIVE WELL-BEING: Social, Satisfaction.
 2) MATERIAL CONDITIONS: Income, Employment, Unemployment, Rooms.
@@ -471,11 +471,11 @@ autoplot(kmeans(eu.stand, 3), data = eu.stand)
 autoplot(kmeans(eu.stand, 3), data = eu.stand, label = TRUE, label.size = 3) + theme_classic()
 autoplot(kmeans(eu.stand, 4), data = eu.stand, label = TRUE, label.size = 3) + theme_classic()
 ```
-_**Representation of 3 K-means clusters
+_**Representation of 3 K-means clusters**_
 <img width="800" alt="cluster 3" src="https://user-images.githubusercontent.com/87983033/219063786-df549a78-4555-4c60-85cd-8cc5ea17e548.png">
 
 
-_**Representation of 4 K-means clusters
+_**Representation of 4 K-means clusters**_
 <img width="800" alt="cluster 4" src="https://user-images.githubusercontent.com/87983033/219063807-1144e0aa-6cb2-4db7-aa04-b36e1314fcd1.png">
 
 
