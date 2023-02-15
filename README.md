@@ -162,7 +162,7 @@ qqline(dataEU$income, col = "steelblue", lwd = 2)
 ```
 <img width="550" alt="ex norm" src="https://user-images.githubusercontent.com/87983033/219007441-f2725217-304e-4803-a96d-ad6ff898923b.png"> <img width="364" alt="qqplot" src="https://user-images.githubusercontent.com/87983033/219008379-e2c09fb1-3db3-4b28-9181-d0edd9348092.png">
  
-e) **Absence of multicollinearity**. The rule of thumb is that correlation should not be above r = 0.90. 
+e) **Absence of multicollinearity**. The rule of thumb is that correlation should not be above r = 0.90. The only case in which a high correlation (>0.9) is present is the one regarding life and mortality.
 
 ```ruby
 ###CORRELATION PLOT:
@@ -250,7 +250,7 @@ box_m(dataEU[, c("life", "mortality", "homicide", "vote", "education", "broadban
 ```
 
 #### 3.2 MANOVA computation
-Despite most of the previous assumptions are not verified, a MANOVA analysis is conducted. In this setting, the **Pillai’s Trace test** is used because more robust and recommended in presence of an unbalanced design (as in this case), and for statistically significant Box’s M results. The results suggest that there is a statistically significant difference between the 7 continents subgroups on the combined dependent variables.
+Despite most of the previous assumptions are not verified, a MANOVA analysis is conducted. In this setting, the **Pillai’s Trace test** is used because more robust and recommended in presence of an unbalanced design (as in this case), and for statistically significant Box’s M results. The below results suggest that there is a statistically significant difference between the 7 continents subgroups on the combined dependent variables. NB: in the 'Quality of Life' group the variable mortality was removed cause highly correlated with life variable.
 
 ```ruby
 ####MANOVA TESTING (Pillai):
