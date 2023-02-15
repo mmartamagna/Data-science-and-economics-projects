@@ -308,7 +308,9 @@ PROCEDURE:
 - Choice of the components which detect the greatest part of explained variance (scree plot); or according to the Kaiser r's criterion.
 - Plotting the biplots with loading vectors. 
 
-**Components loadings**
+**Components loadings**. Loadings give a sense of relative contribution of each original variable to the PC of interest. They can be viewed as the correlation coefficients between the variables (rows) and the principal components (columns).
+
+<img width="551" alt="loadings" src="https://user-images.githubusercontent.com/87983033/219049697-1819e51a-71c0-494d-af9f-156cc44af568.png">
 
 ```ruby
 ###2) PRINCIPAL COMPONENT ANALYSIS WITH STANDARDISED DATA
