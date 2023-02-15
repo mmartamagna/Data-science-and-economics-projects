@@ -58,8 +58,7 @@ ggplot(meandata.melt, aes(y=value,  x= Group.1, color= Group.1, fill= Group.1)) 
   labs(title = "Average value of well-being variables in different continents", 
        y = "Average value") 
  ```
- ![plot_zoom](https://user-images.githubusercontent.com/87983033/218788502-4b8297c6-cbdc-407c-8c5b-f94d8252ea97.jpg)
-
+![plot_zoom](https://user-images.githubusercontent.com/87983033/218999087-99f76460-0e8d-4b9a-a0d5-72f8c1819713.png)
 
 ### 3. Multivariate analysis of variance (MANOVA, univariate one-way ANOVA)
 Multivariate analysis of variance (MANOVA) is a statistical analysis used to examine the effects of one or more independent variables (IVs) on multiple dependent variables (DVs). Unlike ANOVA procedures that analyze differences across two or more groups on one dependent variable, MANOVA procedures analyze differences across two or more groups on two or more dependent variables. In this part three different MANOVA procedures are used. In each case, a different group of independent variables is considered:
@@ -85,5 +84,9 @@ Before conducting a multviariate analysis of variance, it is compulsory the chec
 1. **Adequate sample size**. The dataset presents an adequate number of observations with respect to the number of variables (220 rows > 14 columns).
 2. **Independence of observations**. Each record belongs to only one group (region), therefore there are no relationships between the observations in each group.
 3. **Absence of univariate or multivariate outliers**. Multivariate outliers are data points that have an unusual combination of values on the outcome (or dependent) variables. In the MANOVA framework, the _Mahalanobis distance_ is generally used to detect multivariate outliers. The distance reports how far an observation is from the center of the data cloud, taking into account the shape (covariance) of the cloud as well. 
+
+In the table below are reported the number of outliers for each variable and whether these are extreme or not. On the right, an example of box plot reporting the outliers for the "Homicide rate" variable.
+<img width="450" alt="outliers" src="https://user-images.githubusercontent.com/87983033/218998752-b62aeb81-c3c2-40b1-b3bc-387555e19ecb.png"> <img width="450" alt="esempio outliers" src="https://user-images.githubusercontent.com/87983033/219000271-4d8ecff3-a416-4322-9958-e5e0a57f973c.png">
+
 
 4.  
