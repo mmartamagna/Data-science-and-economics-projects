@@ -99,7 +99,52 @@ dat$outlier[which(is.na(dat$is_outlier))] <- as.numeric(NA)
 p9<- ggplot(dat, aes(x = factor(continent), y = homicide, fill = continent)) + geom_text(aes(label=outlier),na.rm=TRUE, nudge_y=0.04, size=3, vjust=-0.5, color="Black") + geom_boxplot(outlier.colour="black", outlier.shape=16, outlier.size=2) + xlab("Continent") + ylab("Homicide rate") + scale_fill_brewer(palette="Pastel1") + labs(fill="Continent") + theme_minimal()
 p9
 ```
-<img width="450" alt="esempio outliers" src="https://user-images.githubusercontent.com/87983033/219000271-4d8ecff3-a416-4322-9958-e5e0a57f973c.png">
+<img width="500" alt="esempio outliers" src="https://user-images.githubusercontent.com/87983033/219000271-4d8ecff3-a416-4322-9958-e5e0a57f973c.png">
 
+4. **Multivariate normality**
 
-4.  
+```ruby
+#4) #CHECK FOR UNIVARIATE NORMALITY
+##SHAPIRO TEST and MULTIVARIATE SHAPIRO TEST
+anovadata1 = data.frame(dataEU$satisfaction, dataEU$social)
+attach(anovadata1)
+norm1 <- anovadata1 %>%
+  group_by(continent) %>%
+  shapiro_test(social, satisfaction) %>%
+  arrange(variable) 
+norm1 <- filter(norm1, p>0.05)
+View(norm1) #9 over 14 has a pvalue>0.05
+
+anovadata2 = data.frame(dataEU$income, dataEU$employment, dataEU$unemployment, dataEU$rooms)
+attach(anovadata2)
+norm2 <- anovadata2 %>%
+  group_by(continent) %>%
+  shapiro_test(income, employment, unemployment, rooms) %>%
+  arrange(variable) 
+norm2 <- filter(norm2, p>0.05)
+View(norm2) #12 over 28 has a pvalue>0.05
+
+anovadata3 = data.frame(dataEU$life, dataEU$mortality, dataEU$homicide, dataEU$education, dataEU$pollution, dataEU$broadband, dataEU$vote)
+attach(anovadata3)
+norm3 <- anovadata3 %>%
+  group_by(continent) %>%
+  shapiro_test(education, homicide, mortality, life, pollution, vote, broadband) %>%
+  arrange(variable) 
+View(anovadata3)
+norm3<- filter(norm3, p>0.05)
+View(norm3) #28 over 49 has a pvalue>0.05
+
+##MULTIVARIATE NORMALITY: in none of the groups I have multivariate normality
+attach(anovadata1)
+anovadata1 %>%
+  select(social, satisfaction) %>%
+  mshapiro_test() 
+
+anovadata2 %>%
+  select(income, employment, unemployment, rooms) %>%
+  mshapiro_test()
+
+anovadata3 %>%
+  select(education, homicide, mortality, life, pollution, vote, broadband) %>%
+  mshapiro_test()
+```
