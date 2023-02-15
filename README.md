@@ -10,7 +10,7 @@ It provides some statistical insights regarding the [OECD Regional Well-being pr
 1. [Data](#data)
 2. [Descriptive statistics](#descriptive-statistics)
 3. [Multivariate analysis of variance (MANOVA, univariate one-way ANOVA)](#analysis-of-variance-(MANOVA,-univariate-one-way-ANOVA))
-4. [Principal components analysis (PCA)](#principal-components-analysis-(PCA)
+4. [Principal components analysis (PCA)](#principal-components-analysis-(PCA))
 5. [Multidimensional scaling (Classical MDS, Non-metric MDS, Distance-based redundancy analysis)](#multidimensional-scaling-(Classical-MDS,-Non-metric-MDS,-Distance-based-redundancy-analysis))
 6. [K-means clustering](#k-means-clustering)
 
@@ -84,9 +84,11 @@ Before conducting a multviariate analysis of variance, it is compulsory the chec
 1. **Adequate sample size**. The dataset presents an adequate number of observations with respect to the number of variables (220 rows > 14 columns).
 2. **Independence of observations**. Each record belongs to only one group (region), therefore there are no relationships between the observations in each group.
 3. **Absence of univariate or multivariate outliers**. Multivariate outliers are data points that have an unusual combination of values on the outcome (or dependent) variables. In the MANOVA framework, the _Mahalanobis distance_ is generally used to detect multivariate outliers. The distance reports how far an observation is from the center of the data cloud, taking into account the shape (covariance) of the cloud as well. 
+In the table below are reported the number of outliers for each variable and whether these are extreme or not. On the right, an example of box plot reporting the outliers for the "Homicide rate" and "Mortality rate" variables.
 
-In the table below are reported the number of outliers for each variable and whether these are extreme or not. On the right, an example of box plot reporting the outliers for the "Homicide rate" variable.
-<img width="450" alt="outliers" src="https://user-images.githubusercontent.com/87983033/218998752-b62aeb81-c3c2-40b1-b3bc-387555e19ecb.png"> <img width="450" alt="esempio outliers" src="https://user-images.githubusercontent.com/87983033/219000271-4d8ecff3-a416-4322-9958-e5e0a57f973c.png">
+<img width="450" alt="outliers" src="https://user-images.githubusercontent.com/87983033/218998752-b62aeb81-c3c2-40b1-b3bc-387555e19ecb.png"> 
+
+<img width="450" alt="esempio outliers" src="https://user-images.githubusercontent.com/87983033/219000271-4d8ecff3-a416-4322-9958-e5e0a57f973c.png"> <img width="450" alt="altro esempio" src="https://user-images.githubusercontent.com/87983033/219001322-c85705c0-0ec9-41ae-a60a-401e841a07f4.png">
 
 
 4.  
