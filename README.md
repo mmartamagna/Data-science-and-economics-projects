@@ -9,7 +9,7 @@ It provides some statistical insights regarding the [OECD Regional Well-being pr
 
 1. [Data](#data)
 2. [Descriptive statistics](#descriptive-statistics)
-3. [Multivariate analysis of variance (MANOVA, univariate one-way ANOVA)](#analysis-of-variance-(MANOVA,-univariate-one-way-ANOVA))
+3. [Multivariate analysis of variance (assumptions, MANOVA, univariate one-way ANOVA)](#analysis-of-variance-(assumptions,-MANOVA,-univariate-one-way-ANOVA))
 4. [Principal components analysis (PCA)](#principal-components-analysis-(PCA))
 5. [Multidimensional scaling (Classical MDS, Non-metric MDS, Distance-based redundancy analysis)](#multidimensional-scaling-(Classical-MDS,-Non-metric-MDS,-Distance-based-redundancy-analysis))
 6. [K-means clustering](#k-means-clustering)
@@ -298,3 +298,4 @@ The univariate one-way ANOVA examines, separately, each dependent variable. The 
 - GROUP 2 (Material conditions):  the test is statistically significant, which means we can reject the null hypothesis that income, employment, unemployment, rooms, are equal between the seven European groups.
 - GROUP 3 (Quality of Life): the test is statistically significant, which means we can reject the null hypothesis that life, mortality, homicide, pollution, vote, education, and broadband, are equal between the seven European groups.
 
+### 4. PRINCIPAL COMPONENTS ANALYSIS (PCA)
