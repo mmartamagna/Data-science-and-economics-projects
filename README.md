@@ -299,3 +299,14 @@ The univariate one-way ANOVA examines, separately, each dependent variable. The 
 - GROUP 3 (Quality of Life): the test is statistically significant, which means we can reject the null hypothesis that life, mortality, homicide, pollution, vote, education, and broadband, are equal between the seven European groups.
 
 ### 4. PRINCIPAL COMPONENTS ANALYSIS (PCA)
+In this study the number of variables is quite consistent, and this makes unapplicable methods such linear regressions. PCA is a multivariate technique with the central aim of reducing the dimensionality of a multivariate data set while accounting for as much of the original variation as possible present in the data set. 
+The goal of PCA is to describe variation in a set of correlated variables, but in terms of a new set of uncorrelated variables, each of which is a combination of all the original variables.
+
+PROCEDURE:
+- Standardisation of variables (performing PCA using the standardized data is equivalent to principal component analysis using the correlation matrix).
+- Computation of components loadings with the `princomp()` command.
+- Choice of the components which detect the greatest part of explained variance (scree plot); or according to the Kaiser r's criterion.
+- Plotting the biplots with loading vectors. 
+
+<img width="500" alt="scree plot" src="https://user-images.githubusercontent.com/87983033/219045945-c7f7908e-125b-40d1-b8c3-9740ef74d6d7.png">
+
