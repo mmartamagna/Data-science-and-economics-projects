@@ -81,3 +81,9 @@ Before conducting a multviariate analysis of variance, it is compulsory the chec
 | Linearity between all outcome variables for each group |    | &cross; |
 | Homogeneity of variances | Levene’s test can be used to test the equality of variances between groups | &cross;|
 | Homogeneity of variance-covariance matrices | Box’s M Test can be used to check the equality of covariance between the groups| &cross; |
+
+1. **Adequate sample size**. The dataset presents an adequate number of observations with respect to the number of variables (220 rows > 14 columns).
+2. **Independence of observations**. Each record belongs to only one group (region), therefore there are no relationships between the observations in each group.
+3. **Absence of univariate or multivariate outliers**. Multivariate outliers are data points that have an unusual combination of values on the outcome (or dependent) variables. In the MANOVA framework, the _Mahalanobis distance_ is generally used to detect multivariate outliers. The distance reports how far an observation is from the center of the data cloud, taking into account the shape (covariance) of the cloud as well. 
+
+4.  
