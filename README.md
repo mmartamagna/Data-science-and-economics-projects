@@ -1,6 +1,5 @@
 # OECD Regional Well-being 
-This project was prepared for the Advanced Multivariate Statistics course (a.y. 2021/2022). 
-It provides some statistical insights regarding the [OECD Regional Well-being project](https://www.oecdregionalwellbeing.org/).
+Project for the Advanced Multivariate Statistics regarding the [OECD Regional Well-being project](https://www.oecdregionalwellbeing.org/).
 
 <img src="http://oecdregionalwellbeing.org/assets/images/logo_large.png" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="OECD Regional Well-Being" data-noaft="1" style="width: 250px">
 
