@@ -478,4 +478,10 @@ _**Representation of 3 K-means clusters**_
 _**Representation of 4 K-means clusters**_
 <img width="800" alt="cluster 4" src="https://user-images.githubusercontent.com/87983033/219063807-1144e0aa-6cb2-4db7-aa04-b36e1314fcd1.png">
 
+### Main findings from PCA, MDS, Clustering
+- From the PCA it is not very clear the composition of the two main components. However, it is clear that regions tend to create some subgroups.
+- The MDS results in being more visually clear: in all the three graphs it is possible to see that the observations are divided into three/four main groups. 
+- The K-means clustering strengthens what emerges from MDS: the data can be divided into 4 groups. 
+- It could be interesting to deepen this research and then see if there are some significant differences concerning the original continent division in seven subgroups.
+
 
