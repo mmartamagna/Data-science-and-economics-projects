@@ -104,8 +104,7 @@ p9
 4. **Multivariate normality**
 
 ```ruby
-#4) #CHECK FOR UNIVARIATE NORMALITY
-##SHAPIRO TEST and MULTIVARIATE SHAPIRO TEST
+#4) #CHECK FOR UNIVARIATE NORMALITY: in none of the group I have univariate normality.
 anovadata1 = data.frame(dataEU$satisfaction, dataEU$social)
 attach(anovadata1)
 norm1 <- anovadata1 %>%
