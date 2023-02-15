@@ -310,8 +310,6 @@ PROCEDURE:
 
 **Components loadings**. Loadings give a sense of relative contribution of each original variable to the PC of interest. They can be viewed as the correlation coefficients between the variables (rows) and the principal components (columns).
 
-<img width="551" alt="loadings" src="https://user-images.githubusercontent.com/87983033/219049697-1819e51a-71c0-494d-af9f-156cc44af568.png">
-
 ```ruby
 ###2) PRINCIPAL COMPONENT ANALYSIS WITH STANDARDISED DATA
 #Step 1: preparation of data for PCA
@@ -325,6 +323,7 @@ summary(var.pca, loadings=TRUE)
 var.pca$scores
 var.pca$loadings
 ```
+<img width="551" alt="loadings" src="https://user-images.githubusercontent.com/87983033/219049697-1819e51a-71c0-494d-af9f-156cc44af568.png">
 
 **How many components should be retained?**
 
