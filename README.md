@@ -369,17 +369,6 @@ fviz_pca_ind(var.pca,
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
              repel = TRUE    # Avoid text overlapping
              )
-
-fviz_pca_var(var.pca,
-             col.var = "contrib", # Color by contributions to the PC
-             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
-             repel = TRUE     # Avoid text overlapping
-)
-
-fviz_pca_biplot(var.pca, repel = TRUE,
-                col.var = "#2E9FDF", # Variables color
-                col.ind = "#696969"  # Individuals color
-)
 ```
 
 <img width="800" alt="pca 3" src="https://user-images.githubusercontent.com/87983033/219056407-490b2aa2-8d4d-4efe-8d5c-84ecdaafc918.png">
