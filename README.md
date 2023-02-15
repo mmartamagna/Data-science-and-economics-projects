@@ -255,14 +255,14 @@ Despite most of the previous assumptions are not verified, a MANOVA analysis is 
 ```ruby
 ####MANOVA TESTING (Pillai):
 model1 <- lm(cbind(social, satisfaction) ~ continent, anovadata1)
-Manova(model, test.statistic = "Pillai")
+Manova(model1, test.statistic = "Pillai")
 
 model2 <- lm(cbind(income, employment, unemployment, rooms) ~ continent, anovadata2)
-Manova(model, test.statistic = "Pillai")
+Manova(model2, test.statistic = "Pillai")
 
 model3 <- lm(cbind(life, homicide, pollution, vote, education, broadband) ~ continent, anovadata3)
-Manova(model, test.statistic = "Pillai")
+Manova(model3, test.statistic = "Pillai")
 ```
-<img width="533" alt="anova" src="https://user-images.githubusercontent.com/87983033/219016440-f6572962-fab7-4c4b-abd5-1405ea768cc2.png">
+<img width="550" alt="anova" src="https://user-images.githubusercontent.com/87983033/219016440-f6572962-fab7-4c4b-abd5-1405ea768cc2.png">
 
 
