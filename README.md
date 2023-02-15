@@ -65,7 +65,7 @@ Multivariate analysis of variance (MANOVA) is a statistical analysis used to exa
 2) MATERIAL CONDITIONS: Income, Employment, Unemployment, Rooms.
 3) QUALITY OF LIFE: Life, Mortality, Homicide, Education, Pollution, Vote, Broadband.
 
-#### Check of the assumptions
+#### 3.1 Check of the assumptions
 Before conducting a multviariate analysis of variance, it is compulsory the check of a bench of assumptions. 
 
 
@@ -80,9 +80,9 @@ Before conducting a multviariate analysis of variance, it is compulsory the chec
 | Homogeneity of variances | Levene’s test can be used to test the equality of variances between groups | &cross;|
 | Homogeneity of variance-covariance matrices | Box’s M Test can be used to check the equality of covariance between the groups| &cross; |
 
-1. **Adequate sample size**. The dataset presents an adequate number of observations with respect to the number of variables (220 rows > 14 columns).
-2. **Independence of observations**. Each record belongs to only one group (region), therefore there are no relationships between the observations in each group.
-3. **Absence of univariate or multivariate outliers**. Multivariate outliers are data points that have an unusual combination of values on the outcome (or dependent) variables. In the MANOVA framework, the _Mahalanobis distance_ is generally used to detect multivariate outliers. The distance reports how far an observation is from the center of the data cloud, taking into account the shape (covariance) of the cloud as well. 
+a) **Adequate sample size**. The dataset presents an adequate number of observations with respect to the number of variables (220 rows > 14 columns).
+b) **Independence of observations**. Each record belongs to only one group (region), therefore there are no relationships between the observations in each group.
+c) **Absence of univariate or multivariate outliers**. Multivariate outliers are data points that have an unusual combination of values on the outcome (or dependent) variables. In the MANOVA framework, the _Mahalanobis distance_ is generally used to detect multivariate outliers. The distance reports how far an observation is from the center of the data cloud, taking into account the shape (covariance) of the cloud as well. 
 In the table it is possible to see whether each variable presents one or more outliers and if these are extreme or not.
 
 <img width="450" alt="outliers" src="https://user-images.githubusercontent.com/87983033/218998752-b62aeb81-c3c2-40b1-b3bc-387555e19ecb.png"> 
@@ -101,10 +101,10 @@ p9
 ```
 <img width="500" alt="esempio outliers" src="https://user-images.githubusercontent.com/87983033/219000271-4d8ecff3-a416-4322-9958-e5e0a57f973c.png">
 
-4. **Univariate and multivariate normality**. The Shapiro–Wilk test is a test of normality. In particular, the `shapiro_test()` function checks the existence of univariate normality, whereas `mshapiro_test()` checks the multivariate normality. In both cases, we verify that there is no univariate and multivariate normality across continent subregions.
+d) **Univariate and multivariate normality**. The Shapiro–Wilk test is a test of normality. In particular, the `shapiro_test()` function checks the existence of univariate normality, whereas `mshapiro_test()` checks the multivariate normality. In both cases, we verify that there is no univariate and multivariate normality across continent subregions.
 
 ```ruby
-#4) #CHECK FOR UNIVARIATE NORMALITY: in none of the group I have univariate normality.
+#CHECK FOR UNIVARIATE NORMALITY: in none of the group I have univariate normality.
 anovadata1 = data.frame(dataEU$satisfaction, dataEU$social)
 attach(anovadata1)
 norm1 <- anovadata1 %>%
@@ -162,7 +162,7 @@ qqline(dataEU$income, col = "steelblue", lwd = 2)
 ```
 <img width="550" alt="ex norm" src="https://user-images.githubusercontent.com/87983033/219007441-f2725217-304e-4803-a96d-ad6ff898923b.png"> <img width="364" alt="qqplot" src="https://user-images.githubusercontent.com/87983033/219008379-e2c09fb1-3db3-4b28-9181-d0edd9348092.png">
  
-5. **Absence of multicollinearity**. The rule of thumb is that correlation should not be above r = 0.90. 
+e) **Absence of multicollinearity**. The rule of thumb is that correlation should not be above r = 0.90. 
 
 ```ruby
 ###CORRELATION PLOT:
@@ -195,7 +195,7 @@ mosthighlycorrelated(subdata, 15)
 ```
 <img width="450" alt="correl" src="https://user-images.githubusercontent.com/87983033/219010145-74ee2211-d0a5-41c9-a4dd-096036283283.png"> <img width="283" alt="corr 2" src="https://user-images.githubusercontent.com/87983033/219010306-98748d4d-dbd3-4b2a-b4ec-65ecfce4a91b.png">
 
-6. **Linearity between all outcome variables for each group**
+f) **Linearity between all outcome variables for each group**
 There is no linearity across outcome variables.
 
 ```ruby
@@ -216,7 +216,7 @@ _**Linearity of variables regarding Quality of Life**_
 
 <img width="730" alt="quality" src="https://user-images.githubusercontent.com/87983033/219011655-da9ce36a-5c67-42d9-9c31-cb49e564db8a.png">
 
-7. **Homogeneity of variances** (levene)
+g) **Homogeneity of variances** (levene)
 For each of the outcome variables, the one-way MANOVA assumes that there are equal variances between groups. This can be checked using the Levene’s test of equality of variances. Key R function: `levene_test()`. The Leven test is statistically significant for all the groups of dependent variables: so, overall, there is no homogeneity of variances. The only exceptions in which the p-value is not statistically significant are "employment" and "broadband" variables, in which the p-value is >0.05. 
 
 ```ruby
@@ -238,7 +238,7 @@ anovadata3 %>%
 
 ```
 
-8. **Homogeneity of variance-covariance matrices**
+h) **Homogeneity of variance-covariance matrices**
 To this aim, the Box's M-test for Homogeneity of Covariance Matrices is used (R function: `box_m()`). The test is statistically significant for all the groups of dependent variables, so the data violate the assumption of homogeneity of variance-covariance matrices. 
 
 ```ruby
@@ -248,4 +248,21 @@ box_m(dataEU[, c("satisfaction", "social")], anovadata$continent)
 box_m(dataEU[, c("income", "employment", "unemployment", "rooms")], anovadata$continent)
 box_m(dataEU[, c("life", "mortality", "homicide", "vote", "education", "broadband", "pollution")], anovadata$continent)
 ```
+
+#### 3.2 MANOVA computation
+Despite most of the previous assumptions are not verified, a MANOVA analysis is conducted. In this setting, the **Pillai’s Trace test** is used because more robust and recommended in presence of an unbalanced design (as in this case), and for statistically significant Box’s M results. The results suggest that there is a statistically significant difference between the 7 continents subgroups on the combined dependent variables.
+
+```ruby
+####MANOVA TESTING (Pillai):
+model1 <- lm(cbind(social, satisfaction) ~ continent, anovadata1)
+Manova(model, test.statistic = "Pillai")
+
+model2 <- lm(cbind(income, employment, unemployment, rooms) ~ continent, anovadata2)
+Manova(model, test.statistic = "Pillai")
+
+model3 <- lm(cbind(life, homicide, pollution, vote, education, broadband) ~ continent, anovadata3)
+Manova(model, test.statistic = "Pillai")
+```
+<img width="533" alt="anova" src="https://user-images.githubusercontent.com/87983033/219016440-f6572962-fab7-4c4b-abd5-1405ea768cc2.png">
+
 
