@@ -457,24 +457,25 @@ text(x, y, labels = row.names(standardisedvariables), cex=.7)
 K-means clustering aims to partition a set of observations into a number of clusters (k), resulting in the partitioning of the data into different groups. It is possible to choose the right number of clusters by plotting the number of suggested clusters with respect to the total within sum of squares.
 As a rule of thumb, the location of a bend (elbow) in the plot is considered as an indicator of the appropriate number of K-means clusters, since a low within-cluster variation denotes a good clustering (k=4).
 
-<img width="428" alt="gomito k means" src="https://user-images.githubusercontent.com/87983033/219063279-9227a34b-6e6f-4f3d-9f35-a8282370718e.png">
-
 ```ruby
 library(ggfortify)
 library(ggplot2)
 library(dplyr)
 eu.stand <- scale(dataEU2[, 4:16])  # To standarize the variables
 set.seed(1)
+```
+<img width="428" alt="gomito k means" src="https://user-images.githubusercontent.com/87983033/219063279-9227a34b-6e6f-4f3d-9f35-a8282370718e.png">
 
+```ruby
 autoplot(kmeans(eu.stand, 3), data = eu.stand)
 autoplot(kmeans(eu.stand, 3), data = eu.stand, label = TRUE, label.size = 3) + theme_classic()
 autoplot(kmeans(eu.stand, 4), data = eu.stand, label = TRUE, label.size = 3) + theme_classic()
 ```
-Representation of 3 K-means clusters
+_**Representation of 3 K-means clusters
 <img width="800" alt="cluster 3" src="https://user-images.githubusercontent.com/87983033/219063786-df549a78-4555-4c60-85cd-8cc5ea17e548.png">
 
 
-Representation of 4 K-means clusters
+_**Representation of 4 K-means clusters
 <img width="800" alt="cluster 4" src="https://user-images.githubusercontent.com/87983033/219063807-1144e0aa-6cb2-4db7-aa04-b36e1314fcd1.png">
 
 
