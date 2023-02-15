@@ -343,3 +343,8 @@ fviz_eig(var.pca) #first method to choose the number of ocmponents: the elbow, w
 # We can check this by finding the variance of each of the principal components:
 (var.pca$sdev)^2 #According to this method, we should use the first three components.
 ```
+
+**Graphical representation of PCA**
+*** Regional level biplots
+
+<img width="820" alt="pca1" src="https://user-images.githubusercontent.com/87983033/219051085-bb2a2b42-d6a9-4ff1-ab3b-9ee6722a2f66.png">
