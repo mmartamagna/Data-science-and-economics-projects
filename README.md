@@ -216,6 +216,8 @@ _**Linearity of variables regarding Quality of Life**_
 
 <img width="730" alt="quality" src="https://user-images.githubusercontent.com/87983033/219011655-da9ce36a-5c67-42d9-9c31-cb49e564db8a.png">
 
+7. **Homogeneity of variances** (levene)
+For each of the outcome variables, the one-way MANOVA assumes that there are equal variances between groups. This can be checked using the Levene’s test of equality of variances. Key R function: `levene_test()`. The Leven test is statistically significant for all the groups of dependent variables: so, overall, there is no homogeneity of variances. The only exceptions in which the p-value is not statistically significant are "employment" and "broadband" variables, in which the p-value is >0.05. 
 
-8. **Homogeneity of variances** (Levene’s test can be used to test the equality of variances between groups)
-9. **Homogeneity of variance-covariance matrices** (Box’s M Test can be used to check the equality of covariance between the groups). 
+8. **Homogeneity of variance-covariance matrices**
+To this aim, the Box's M-test for Homogeneity of Covariance Matrices is used (R function: `box_m()`). The test is statistically significant for all the groups of dependent variables, so the data violate the assumption of homogeneity of variance-covariance matrices. 
