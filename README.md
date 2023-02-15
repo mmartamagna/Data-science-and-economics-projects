@@ -200,9 +200,9 @@ There is no linearity across outcome variables.
 
 ```ruby
 library(car)
-scatterplotMatrix(~ social + satisfaction, data =anovadata)
-scatterplotMatrix(~ income + employment + unemployment + rooms, data =anovadata)
-scatterplotMatrix(~ life + mortality + homicide + vote + education + broadband + pollution, data =anovadata)
+scatterplotMatrix(~ social + satisfaction, data = dataEU)
+scatterplotMatrix(~ income + employment + unemployment + rooms, data = dataEU)
+scatterplotMatrix(~ life + mortality + homicide + vote + education + broadband + pollution, data = dataEU)
 ```
 _**Linearity of variables regarding Subjective Well-being**_
 
