@@ -265,4 +265,33 @@ Manova(model3, test.statistic = "Pillai")
 ```
 <img width="550" alt="anova" src="https://user-images.githubusercontent.com/87983033/219016440-f6572962-fab7-4c4b-abd5-1405ea768cc2.png">
 
+### 3.3 Univariate one-way ANOVA computation
+A univariate one-way ANOVA is conducted to examine the specific dependent variables that contributed to the significant global effect. The command is the `welch_anova_test()`, which is suitable when the homogeneity of variance assumption is not met.
+
+```ruby
+###UNIVARIATE ONE-WAY ANOVA (Welch)
+# Group the data by variable
+grouped.data1 <- anovadata1 %>%
+gather(key = "variable", value = "value", social, satisfaction) %>%
+  group_by(variable)
+
+grouped.data2 <- anovadata2 %>%
+  gather(key = "variable", value = "value", income, employment, unemployment, rooms) %>%
+  group_by(variable)
+
+grouped.data3 <- anovadata3 %>%
+  gather(key = "variable", value = "value", life, homicide, pollution, vote, education, broadband) %>%
+  group_by(variable)
+
+# Do welch one way anova test
+grouped.data1 %>% welch_anova_test(value ~ continent)
+grouped.data2 %>% welch_anova_test(value ~ continent)
+grouped.data3 %>% welch_anova_test(value ~ continent)
+```
+
+ANOVA RESULTS:
+GROUP 1: the test is statistically significant, which means we can reject the null hypothesis that social and satisfaction are equal between the seven European groups.
+GROUP 2:  the test is statistically significant, which means we can reject the null hypothesis that income, employment, unemployment, rooms, are equal between the seven European groups.
+GROUP 3: the test is statistically significant, which means we can reject the null hypothesis that life, mortality, homicide, pollution, vote, education, and broadband, are equal between the seven European groups.
+
 
