@@ -162,7 +162,7 @@ qqline(dataEU$income, col = "steelblue", lwd = 2)
 ```
 <img width="550" alt="ex norm" src="https://user-images.githubusercontent.com/87983033/219007441-f2725217-304e-4803-a96d-ad6ff898923b.png"> <img width="364" alt="qqplot" src="https://user-images.githubusercontent.com/87983033/219008379-e2c09fb1-3db3-4b28-9181-d0edd9348092.png">
  
-5. **Absence of multicollinearity** (Correlation should not be above r = 0.90).
+5. **Absence of multicollinearity**. The rule of thumb is that correlation should not be above r = 0.90. 
 
 ```ruby
 ###CORRELATION PLOT:
