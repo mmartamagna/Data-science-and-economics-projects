@@ -62,3 +62,9 @@ ggplot(meandata.melt, aes(y=value,  x= Group.1, color= Group.1, fill= Group.1)) 
 
 
 ### 3. Multivariate analysis of variance (MANOVA, univariate one-way ANOVA)
+Multivariate analysis of variance (MANOVA) is a statistical analysis used to examine the effects of one or more independent variables (IVs) on multiple dependent variables (DVs). Unlike ANOVA procedures that analyze differences across two or more groups on one dependent variable, MANOVA procedures analyze differences across two or more groups on two or more dependent variables. In this part three different MANOVA procedures are used. In each case, a different group of independent variables is considered:
+1) SUBJECTIVE WELL-BEING: Social, Satisfaction.
+2) MATERIAL CONDITIONS: Income, Employment, Unemployment, Rooms.
+3) QUALITY OF LIFE: Life, Mortality, Homicide, Education, Pollution, Vote, Broadband.
+
+#### Check of the assumptions
