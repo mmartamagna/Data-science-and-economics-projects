@@ -377,9 +377,10 @@ fviz_pca_ind(var.pca,
 ### 5. Multidimensional scaling (Classical MDS, Non-metric MDS, Distance-based redundancy analysis)
 Multidimensional scaling is a dimensional reduction technique to represent the distances among the objects in a parsimonious (and visual) way (i.e., a lower k-dimensional space). Multidimensional scaling analysis (MDS) iuses directly matrices of  distances rather than on matrices of values. In this part, three different MDS methods are presented, and the considered distance is the Euclidean one.
 
-R FUNCTIONS`:
-`cmdscale()` is the function used for conducting the classical approach. 
-`isoMDS()` is the function used for the Non Metric Multidimensional Scaling.
-`capscale()` is the function used for the Distance-based Redundancy Analysis.
+R FUNCTIONS:
+
+- `cmdscale()` is the function used for conducting the classical approach. 
+- `isoMDS()` is the function used for the Non Metric Multidimensional Scaling.
+- `capscale()` is the function used for the Distance-based Redundancy Analysis.
 
 ### 6. K-means clustering
