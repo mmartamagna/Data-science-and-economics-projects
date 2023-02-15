@@ -16,7 +16,7 @@ It provides some statistical insights regarding the [OECD Regional Well-being pr
 
 ### 1. Data
 
-The OECD Regional well-being dataset ((https://stats.oecd.org/Index.aspx?DataSetCode=RWB) presents eleven dimensions central to well-being recorded at the regional level, covering _**material conditions**_ (income, jobs and housing), _**quality of life**_ (education, health, environment, safety and access to services) and _**subjective well-being**_ (social network support and life satisfaction). The set of indicators selected to measure these dimensions is a combination of people's attributes and their local conditions, and in most cases, are available over two different years (2000 and 2014). To the aim of this project, a subset of the original OECD data was prepared. The new dataset (dataEU) is composed of **221 regional-level observations** and **15 variables**. The data points regard only a sample of OECD countries belonging to the European continent. The only new added variable is the one named "continent". 
+The OECD Regional well-being dataset (https://stats.oecd.org/Index.aspx?DataSetCode=RWB) presents eleven dimensions central to well-being recorded at the regional level, covering _**material conditions**_ (income, jobs and housing), _**quality of life**_ (education, health, environment, safety and access to services) and _**subjective well-being**_ (social network support and life satisfaction). The set of indicators selected to measure these dimensions is a combination of people's attributes and their local conditions, and in most cases, are available over two different years (2000 and 2014). To the aim of this project, a subset of the original OECD data was prepared. The new dataset (dataEU) is composed of **221 regional-level observations** and **15 variables**. The data points regard only a sample of OECD countries belonging to the European continent. The only new added variable is the one named "continent". 
 
 | Variable  |   Description |  Well-being dimension |
 |-------------|---------------|---------------------|
@@ -298,7 +298,7 @@ The univariate one-way ANOVA examines, separately, each dependent variable. The 
 - GROUP 2 (Material conditions):  the test is statistically significant, which means we can reject the null hypothesis that income, employment, unemployment, rooms, are equal between the seven European groups.
 - GROUP 3 (Quality of Life): the test is statistically significant, which means we can reject the null hypothesis that life, mortality, homicide, pollution, vote, education, and broadband, are equal between the seven European groups.
 
-### 4. PRINCIPAL COMPONENTS ANALYSIS (PCA)
+### 4. Principal components analysis (PCA)
 In this study the number of variables is quite consistent, and this makes unapplicable methods such linear regressions. PCA is a multivariate technique with the central aim of reducing the dimensionality of a multivariate data set while accounting for as much of the original variation as possible present in the data set. 
 The goal of PCA is to describe variation in a set of correlated variables, but in terms of a new set of uncorrelated variables, each of which is a combination of all the original variables.
 
@@ -373,3 +373,13 @@ fviz_pca_ind(var.pca,
 ```
 
 <img width="800" alt="pca 3" src="https://user-images.githubusercontent.com/87983033/219056407-490b2aa2-8d4d-4efe-8d5c-84ecdaafc918.png">
+
+### 5. Multidimensional scaling (Classical MDS, Non-metric MDS, Distance-based redundancy analysis)
+Multidimensional scaling is a dimensional reduction technique to represent the distances among the objects in a parsimonious (and visual) way (i.e., a lower k-dimensional space). Multidimensional scaling analysis (MDS) iuses directly matrices of  distances rather than on matrices of values. In this part, three different MDS methods are presented, and the considered distance is the Euclidean one.
+
+R FUNCTIONS`:
+`cmdscale()` is the function used for conducting the classical approach. 
+`isoMDS()` is the function used for the Non Metric Multidimensional Scaling.
+`capscale()` is the function used for the Distance-based Redundancy Analysis.
+
+### 6. K-means clustering
